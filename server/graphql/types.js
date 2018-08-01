@@ -1,5 +1,20 @@
+// Imports: GraphQL
+import { gql } from 'apollo-server-express';
+
+
 // GraphQL: TypeDefs
-const TYPEDEFS = `
+const TYPEDEFS = gql`
+
+  type Query {
+    getFarmersMarketsByZipCode(zipCode: Int): Facility
+    getAllRecreationInformationOrganizations: Facility
+    getRecreationInformationOrganizationByID(ID: String): Facility
+    getNumberOfCornByYear(year: Int): Facility
+    getNumberOfCattleByYear(year: Int): Facility
+  }
+
+
+
   type Organization {
     OrgAbbrevName: String
     OrgJurisdictionType: String
@@ -181,11 +196,11 @@ const TYPEDEFS = `
 
   type FacilityLink {
     EntityType: String
-    EntityID: 203896
-    LinkType: Reservation
-    Description: 
-    URL: http://www.dcr.state.va.us/parks/reserve.htm
-    Title: George Washington's Gristmill Online Reservation
+    EntityID: String
+    LinkType: String
+    Description: String
+    URL: String
+    Title: String
   }
 
 
@@ -215,11 +230,11 @@ const TYPEDEFS = `
   }
 
   type PermittedEquipment {
-
+    test: String
   }
 
   type EntityMedia {
-
+    test: String
   }
 
 
@@ -244,7 +259,7 @@ const TYPEDEFS = `
   }
 
   type Zone {
-
+    test: String
   }
 
   type Tour {
@@ -264,9 +279,8 @@ const TYPEDEFS = `
   }
 
   type MemberTour {
-
+    test: String
   }
-
 `;
 
 
